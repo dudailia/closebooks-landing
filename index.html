@@ -16,7 +16,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-
+ 
 /* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
@@ -29,7 +29,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .btn-primary:hover{background:var(--accent-mid);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--accent);border:1.5px solid var(--accent);padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-block}
 .btn-outline:hover{background:var(--accent-light)}
-
+ 
 /* Hero */
 .hero{padding:140px 32px 80px;max-width:1100px;margin:0 auto;text-align:center}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:28px;border:1px solid rgba(45,90,39,.15)}
@@ -39,13 +39,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .hero h1 em{font-style:normal;color:var(--accent);position:relative}
 .hero p.sub{font-size:clamp(17px,2vw,20px);color:var(--text-secondary);max-width:600px;margin:0 auto 36px;line-height:1.5}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
+ 
 /* Stats strip */
 .stats{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .stats-inner{max-width:1100px;margin:0 auto;padding:36px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
 .stat-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--accent);letter-spacing:-1px}
 .stat-label{font-size:14px;color:var(--text-secondary);margin-top:4px}
-
+ 
 /* Problem section */
 .problem{max-width:900px;margin:0 auto;padding:80px 32px}
 .section-label{text-transform:uppercase;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--copper);margin-bottom:16px}
@@ -56,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--copper)}
 .pain-card .pain-stat{font-family:'DM Serif Display',serif;font-size:28px;color:var(--copper);margin-bottom:6px}
 .pain-card .pain-desc{font-size:14px;color:var(--text-secondary);line-height:1.5}
-
+ 
 /* How it works */
 .how{max-width:1100px;margin:0 auto;padding:80px 32px}
 .how h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);text-align:center;margin-bottom:12px;letter-spacing:-0.5px}
@@ -67,7 +67,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .step h3{font-size:17px;font-weight:600;margin-bottom:8px}
 .step p{font-size:14px;color:var(--text-secondary);line-height:1.5}
 .step-arrow{display:none}
-
+ 
 /* Pricing */
 .pricing{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 32px}
 .pricing h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);text-align:center;margin-bottom:12px;letter-spacing:-0.5px}
@@ -83,7 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .price-features{list-style:none;margin-bottom:24px}
 .price-features li{font-size:14px;color:var(--text-secondary);padding:6px 0;padding-left:24px;position:relative}
 .price-features li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
-
+ 
 /* Waitlist */
 .waitlist{max-width:700px;margin:0 auto;padding:80px 32px;text-align:center}
 .waitlist h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);margin-bottom:12px;letter-spacing:-0.5px}
@@ -93,15 +93,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .waitlist-form input:focus{border-color:var(--accent)}
 .waitlist-form button{padding:14px 28px;white-space:nowrap}
 .waitlist-note{font-size:13px;color:var(--text-tertiary);margin-top:12px}
-
+ 
 /* Footer */
 footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-size:13px;color:var(--text-tertiary)}
-
+ 
 /* Social proof ticker */
 .proof{max-width:800px;margin:0 auto;padding:0 32px 60px;text-align:center}
 .proof-quote{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.5vw,26px);line-height:1.4;color:var(--ink);margin-bottom:16px;letter-spacing:-0.3px}
 .proof-attr{font-size:14px;color:var(--text-secondary)}
-
+ 
 @media(max-width:640px){
   .stats-inner{grid-template-columns:1fr;gap:16px}
   .nav-links a:not(.btn-primary){display:none}
@@ -110,7 +110,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">Close<span>Books</span></a>
@@ -121,7 +121,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
     </div>
   </div>
 </nav>
-
+ 
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span> Now accepting early access firms</div>
   <h1>Close your clients' books<br>in <em>hours, not days</em></h1>
@@ -131,7 +131,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
     <a href="#how" class="btn-outline">See how it works</a>
   </div>
 </section>
-
+ 
 <div class="stats">
   <div class="stats-inner">
     <div><div class="stat-num">85-95%</div><div class="stat-label">Transactions auto-categorized</div></div>
@@ -139,7 +139,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
     <div><div class="stat-num">$99</div><div class="stat-label">Starting price / month</div></div>
   </div>
 </div>
-
+ 
 <section class="problem">
   <div class="section-label">The problem</div>
   <h2>Your firm is doing the same manual close work it did a decade ago</h2>
@@ -159,12 +159,12 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
     </div>
   </div>
 </section>
-
+ 
 <div class="proof">
   <div class="proof-quote">"If firms could just get the right documents up front and auto-categorize transactions, month-end close would be a breeze."</div>
   <div class="proof-attr">— Common sentiment from CPA firm owners nationwide</div>
 </div>
-
+ 
 <section class="how" id="how">
   <div class="section-label" style="text-align:center">How it works</div>
   <h2>From raw bank data to close-ready books in 4 steps</h2>
@@ -192,7 +192,7 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
     </div>
   </div>
 </section>
-
+ 
 <section class="pricing" id="pricing">
   <div class="section-label" style="text-align:center">Pricing</div>
   <h2>Simple pricing that scales with your firm</h2>
@@ -244,36 +244,63 @@ footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-si
     </div>
   </div>
 </section>
-
+ 
 <section class="waitlist" id="waitlist">
   <div class="section-label">Early access</div>
   <h2>Be one of the first 50 firms</h2>
   <p>Early access firms get 50% off for life and direct input on what we build next. We're onboarding firms one at a time to ensure quality.</p>
-  <div class="waitlist-form">
-    <input type="email" placeholder="Your work email" id="email-input">
+  <div class="waitlist-form" id="waitlist-form">
+    <input type="email" placeholder="Your work email" id="email-input" required>
     <button class="btn-primary" onclick="handleSignup()">Join waitlist</button>
   </div>
   <div class="waitlist-note" id="form-msg">No credit card required. We'll reach out within 48 hours.</div>
 </section>
-
+ 
 <footer>
   <p>&copy; 2026 CloseBooks. Built at Northeastern University.</p>
 </footer>
-
+ 
 <script>
-function handleSignup() {
+async function handleSignup() {
   const email = document.getElementById('email-input').value;
   const msg = document.getElementById('form-msg');
+  const btn = document.querySelector('.waitlist-form .btn-primary');
+  
   if (!email || !email.includes('@')) {
     msg.textContent = 'Please enter a valid email address.';
     msg.style.color = '#b8734a';
     return;
   }
-  msg.textContent = "You're on the list! We'll be in touch within 48 hours.";
-  msg.style.color = '#2d5a27';
-  document.getElementById('email-input').value = '';
+ 
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+ 
+  try {
+    const res = await fetch('https://formspree.io/f/xdapwdpn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    });
+ 
+    if (res.ok) {
+      msg.textContent = "You're on the list! We'll be in touch within 48 hours.";
+      msg.style.color = '#2d5a27';
+      document.getElementById('email-input').value = '';
+      btn.textContent = 'You\'re in!';
+    } else {
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.style.color = '#b8734a';
+      btn.textContent = 'Join waitlist';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.color = '#b8734a';
+    btn.textContent = 'Join waitlist';
+    btn.disabled = false;
+  }
 }
 </script>
-
+ 
 </body>
 </html>
