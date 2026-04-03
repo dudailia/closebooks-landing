@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloseBooks — AI Month-End Close for CPA Firms</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1a1714;--paper:#faf8f4;--sand:#f0ece4;--warm:#e8e0d4;
+  --accent:#2d5a27;--accent-light:#e8f0e6;--accent-mid:#4a8a42;
+  --copper:#b8734a;--copper-light:#faf0e8;
+  --text-secondary:#6b6560;--text-tertiary:#9a938c;
+  --border:#e0dbd4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--accent);text-decoration:none;letter-spacing:-0.5px}
+.logo span{color:var(--copper)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn-primary{background:var(--accent);color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:var(--accent-mid);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--accent);border:1.5px solid var(--accent);padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-block}
+.btn-outline:hover{background:var(--accent-light)}
+
+/* Hero */
+.hero{padding:140px 32px 80px;max-width:1100px;margin:0 auto;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:28px;border:1px solid rgba(45,90,39,.15)}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-mid);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(38px,5.5vw,64px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--accent);position:relative}
+.hero p.sub{font-size:clamp(17px,2vw,20px);color:var(--text-secondary);max-width:600px;margin:0 auto 36px;line-height:1.5}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* Stats strip */
+.stats{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:1100px;margin:0 auto;padding:36px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--accent);letter-spacing:-1px}
+.stat-label{font-size:14px;color:var(--text-secondary);margin-top:4px}
+
+/* Problem section */
+.problem{max-width:900px;margin:0 auto;padding:80px 32px}
+.section-label{text-transform:uppercase;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--copper);margin-bottom:16px}
+.problem h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);line-height:1.2;margin-bottom:24px;letter-spacing:-0.5px}
+.problem p{font-size:17px;color:var(--text-secondary);margin-bottom:16px;max-width:700px}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+.pain-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--copper)}
+.pain-card .pain-stat{font-family:'DM Serif Display',serif;font-size:28px;color:var(--copper);margin-bottom:6px}
+.pain-card .pain-desc{font-size:14px;color:var(--text-secondary);line-height:1.5}
+
+/* How it works */
+.how{max-width:1100px;margin:0 auto;padding:80px 32px}
+.how h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);text-align:center;margin-bottom:12px;letter-spacing:-0.5px}
+.how .how-sub{text-align:center;color:var(--text-secondary);font-size:17px;margin-bottom:48px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 24px;position:relative}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;margin-bottom:16px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:8px}
+.step p{font-size:14px;color:var(--text-secondary);line-height:1.5}
+.step-arrow{display:none}
+
+/* Pricing */
+.pricing{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 32px}
+.pricing h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);text-align:center;margin-bottom:12px;letter-spacing:-0.5px}
+.pricing .pricing-sub{text-align:center;color:var(--text-secondary);font-size:17px;margin-bottom:48px;max-width:500px;margin-left:auto;margin-right:auto}
+.pricing-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.price-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px 28px;position:relative}
+.price-card.featured{border:2px solid var(--accent);box-shadow:0 4px 24px rgba(45,90,39,.08)}
+.price-card.featured::before{content:'Most popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:100px;font-size:12px;font-weight:600}
+.price-name{font-size:18px;font-weight:600;margin-bottom:4px}
+.price-amt{font-family:'DM Serif Display',serif;font-size:42px;letter-spacing:-1px;margin:12px 0 4px}
+.price-amt span{font-size:16px;font-family:'DM Sans',sans-serif;color:var(--text-tertiary);font-weight:400}
+.price-desc{font-size:14px;color:var(--text-secondary);margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.price-features{list-style:none;margin-bottom:24px}
+.price-features li{font-size:14px;color:var(--text-secondary);padding:6px 0;padding-left:24px;position:relative}
+.price-features li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* Waitlist */
+.waitlist{max-width:700px;margin:0 auto;padding:80px 32px;text-align:center}
+.waitlist h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,40px);margin-bottom:12px;letter-spacing:-0.5px}
+.waitlist p{color:var(--text-secondary);font-size:17px;margin-bottom:32px}
+.waitlist-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.waitlist-form input{flex:1;min-width:220px;padding:14px 18px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;background:#fff;transition:border-color .2s;outline:none}
+.waitlist-form input:focus{border-color:var(--accent)}
+.waitlist-form button{padding:14px 28px;white-space:nowrap}
+.waitlist-note{font-size:13px;color:var(--text-tertiary);margin-top:12px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:32px;text-align:center;font-size:13px;color:var(--text-tertiary)}
+
+/* Social proof ticker */
+.proof{max-width:800px;margin:0 auto;padding:0 32px 60px;text-align:center}
+.proof-quote{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.5vw,26px);line-height:1.4;color:var(--ink);margin-bottom:16px;letter-spacing:-0.3px}
+.proof-attr{font-size:14px;color:var(--text-secondary)}
+
+@media(max-width:640px){
+  .stats-inner{grid-template-columns:1fr;gap:16px}
+  .nav-links a:not(.btn-primary){display:none}
+  .hero-cta{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Close<span>Books</span></a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#waitlist" class="btn-primary">Join waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> Now accepting early access firms</div>
+  <h1>Close your clients' books<br>in <em>hours, not days</em></h1>
+  <p class="sub">AI-powered month-end close that auto-categorizes transactions, reconciles accounts, and delivers review-ready financials — so your firm can serve 3x more clients without hiring.</p>
+  <div class="hero-cta">
+    <a href="#waitlist" class="btn-primary">Get early access</a>
+    <a href="#how" class="btn-outline">See how it works</a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div><div class="stat-num">85-95%</div><div class="stat-label">Transactions auto-categorized</div></div>
+    <div><div class="stat-num">50%</div><div class="stat-label">Faster month-end close</div></div>
+    <div><div class="stat-num">$99</div><div class="stat-label">Starting price / month</div></div>
+  </div>
+</div>
+
+<section class="problem">
+  <div class="section-label">The problem</div>
+  <h2>Your firm is doing the same manual close work it did a decade ago</h2>
+  <p>The accounting talent shortage is real. You can't hire fast enough, your staff is burned out by tax season, and every new client means more grunt work — not more revenue.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-stat">40-70%</div>
+      <div class="pain-desc">of accountants' time is spent on manual data prep — categorizing transactions, chasing documents, fixing errors</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-stat">300K</div>
+      <div class="pain-desc">accountants have left the profession since 2020, and CPA exam candidates are down 50% since 1990</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-stat">97%</div>
+      <div class="pain-desc">of accounting firms admit they're not using technology efficiently — yet tech adoption is critical for survival</div>
+    </div>
+  </div>
+</section>
+
+<div class="proof">
+  <div class="proof-quote">"If firms could just get the right documents up front and auto-categorize transactions, month-end close would be a breeze."</div>
+  <div class="proof-attr">— Common sentiment from CPA firm owners nationwide</div>
+</div>
+
+<section class="how" id="how">
+  <div class="section-label" style="text-align:center">How it works</div>
+  <h2>From raw bank data to close-ready books in 4 steps</h2>
+  <p class="how-sub">CloseBooks plugs into your existing workflow — QuickBooks, Xero, or CSV uploads</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Connect or upload</h3>
+      <p>Link your clients' bank accounts via Plaid or upload CSV/PDF statements. We normalize every format automatically.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>AI categorizes</h3>
+      <p>Our AI maps each transaction to your client's specific Chart of Accounts — learning your firm's patterns over time. 85-95% are auto-matched.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Auto-reconcile</h3>
+      <p>Bank transactions are matched against your GL entries. Exceptions and anomalies are flagged — you review only what matters.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Review and close</h3>
+      <p>Approve the AI's work in a clean dashboard. Generate P&L, balance sheet, and close checklist. Push back to QuickBooks or Xero.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="section-label" style="text-align:center">Pricing</div>
+  <h2>Simple pricing that scales with your firm</h2>
+  <p class="pricing-sub">No per-transaction fees. No surprises. Cancel anytime.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Starter</div>
+      <div class="price-amt">$99 <span>/mo</span></div>
+      <div class="price-desc">For solo practitioners and small firms</div>
+      <ul class="price-features">
+        <li>Up to 20 client entities</li>
+        <li>AI transaction categorization</li>
+        <li>Bank statement upload (CSV/PDF)</li>
+        <li>QuickBooks Online integration</li>
+        <li>Monthly close checklist</li>
+        <li>Email support</li>
+      </ul>
+      <a href="#waitlist" class="btn-outline" style="width:100%;text-align:center">Join waitlist</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-name">Growth</div>
+      <div class="price-amt">$249 <span>/mo</span></div>
+      <div class="price-desc">For growing firms scaling their client base</div>
+      <ul class="price-features">
+        <li>Up to 75 client entities</li>
+        <li>Everything in Starter</li>
+        <li>Plaid bank connections</li>
+        <li>Xero + QBO integration</li>
+        <li>Auto-reconciliation engine</li>
+        <li>P&L and balance sheet generation</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="#waitlist" class="btn-primary" style="width:100%;text-align:center">Join waitlist</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name">Scale</div>
+      <div class="price-amt">$499 <span>/mo</span></div>
+      <div class="price-desc">For firms with high volume and complex needs</div>
+      <ul class="price-features">
+        <li>Unlimited client entities</li>
+        <li>Everything in Growth</li>
+        <li>Multi-entity reconciliation</li>
+        <li>Custom COA templates</li>
+        <li>API access</li>
+        <li>Dedicated account manager</li>
+        <li>White-label option</li>
+      </ul>
+      <a href="#waitlist" class="btn-outline" style="width:100%;text-align:center">Join waitlist</a>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <div class="section-label">Early access</div>
+  <h2>Be one of the first 50 firms</h2>
+  <p>Early access firms get 50% off for life and direct input on what we build next. We're onboarding firms one at a time to ensure quality.</p>
+  <div class="waitlist-form">
+    <input type="email" placeholder="Your work email" id="email-input">
+    <button class="btn-primary" onclick="handleSignup()">Join waitlist</button>
+  </div>
+  <div class="waitlist-note" id="form-msg">No credit card required. We'll reach out within 48 hours.</div>
+</section>
+
+<footer>
+  <p>&copy; 2026 CloseBooks. Built at Northeastern University.</p>
+</footer>
+
+<script>
+function handleSignup() {
+  const email = document.getElementById('email-input').value;
+  const msg = document.getElementById('form-msg');
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.color = '#b8734a';
+    return;
+  }
+  msg.textContent = "You're on the list! We'll be in touch within 48 hours.";
+  msg.style.color = '#2d5a27';
+  document.getElementById('email-input').value = '';
+}
+</script>
+
+</body>
+</html>
